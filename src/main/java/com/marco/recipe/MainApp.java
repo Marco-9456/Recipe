@@ -75,7 +75,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(mainView.getRootPane(), 900, 650); // Startgröße des Fensters
 
         // --- 4. AtlantaFX Theme anwenden ---
-        Application.setUserAgentStylesheet(new CupertinoLight().getUserAgentStylesheet());
+        Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
 
         // --- 5. Stage konfigurieren und anzeigen ---
         primaryStage.setTitle("Rezeptverwaltung");

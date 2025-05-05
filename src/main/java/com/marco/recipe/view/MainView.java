@@ -6,11 +6,7 @@ import atlantafx.base.theme.Styles;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -190,7 +186,7 @@ public class MainView {
     /**
      * Gibt den Haupt-Layoutcontainer (BorderPane) zurück.
      * Wird benötigt, um die Szene im Hauptanwendungsfenster zu setzen.
-     * 
+     *
      * @return Die BorderPane der Hauptansicht.
      */
     public BorderPane getRootPane() {
@@ -201,7 +197,7 @@ public class MainView {
      * Gibt die ListView zurück, die die Rezepte anzeigt.
      * Wird vom Controller benötigt, um die Liste zu füllen und Selektionen zu
      * überwachen.
-     * 
+     *
      * @return Die ListView für Rezepte.
      */
     public ListView<Recipe> getRecipeListView() {
@@ -211,7 +207,7 @@ public class MainView {
     /**
      * Gibt das Textfeld für die Suche zurück.
      * Wird vom Controller benötigt, um Suchanfragen zu lesen.
-     * 
+     *
      * @return Das TextField für die Suche.
      */
     public TextField getSearchField() {
@@ -221,7 +217,7 @@ public class MainView {
     /**
      * Gibt den Button zum Erstellen neuer Rezepte zurück.
      * Wird vom Controller benötigt, um einen ActionHandler zu registrieren.
-     * 
+     *
      * @return Der "Neues Rezept"-Button.
      */
     public Button getNewButton() {
@@ -231,7 +227,7 @@ public class MainView {
     /**
      * Gibt den Button zum Bearbeiten von Rezepten zurück.
      * Wird vom Controller benötigt, um einen ActionHandler zu registrieren.
-     * 
+     *
      * @return Der "Rezept Bearbeiten"-Button.
      */
     public Button getEditButton() {
@@ -241,11 +237,10 @@ public class MainView {
     /**
      * Gibt den Button zum Löschen von Rezepten zurück.
      * Wird vom Controller benötigt, um einen ActionHandler zu registrieren.
-     * 
+     *
      * @return Der "Rezept Löschen"-Button.
      */
     public Button getDeleteButton() {
         return deleteButton;
     }
-
 }
