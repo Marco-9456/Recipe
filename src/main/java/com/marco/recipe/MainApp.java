@@ -20,7 +20,7 @@ import com.marco.recipe.controller.MainController;
  * Datenbankverbindung trennen).
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 @SuppressWarnings("All")
 public class MainApp extends Application {

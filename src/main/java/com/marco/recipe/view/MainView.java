@@ -32,7 +32,7 @@ import java.util.Objects;
  * Controller zugreifen kann.
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 
 @SuppressWarnings("All")

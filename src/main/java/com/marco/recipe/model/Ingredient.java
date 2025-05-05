@@ -7,7 +7,7 @@ import java.util.Objects;
  * Enthält Informationen über Name, Menge und Einheit.
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 @SuppressWarnings("All")
 public class Ingredient {

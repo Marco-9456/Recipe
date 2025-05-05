@@ -34,7 +34,7 @@ import org.kordamp.ikonli.material2.Material2OutlinedAL;
  * (Button-Klicks, Listenauswahl, Suche) und das Aktualisieren der Hauptansicht.
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 @SuppressWarnings("ALL")
 public class MainController {

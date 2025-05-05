@@ -33,7 +33,7 @@ import org.kordamp.ikonli.material2.Material2OutlinedMZ;
  * Gibt das erstellte oder bearbeitete Rezept als Optional zurück.
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 @SuppressWarnings("All")
 public class RecipeEditDialog {

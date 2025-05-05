@@ -9,7 +9,7 @@ import java.util.Objects;
  * Details.
  *
  * @version 1.1
- * @author Marco's Recipe Application Team
+ * @author Mohammed
  */
 @SuppressWarnings("All")
 public class Recipe {
