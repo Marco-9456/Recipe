@@ -90,9 +90,8 @@ public class RecipeEditDialog {
 
         // TimeSpinner ist defekt, keine ahnung warum
         // Spinner für Zeit: erlaubt nur positive Ganzzahlen oder 0
-        SpinnerValueFactory<Integer> timeValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,
-                Integer.MAX_VALUE, 1);
-        timeSpinner = new Spinner<>(timeValueFactory);
+        timeSpinner = new Spinner<>(1,Integer.MAX_VALUE,1);
+
         timeSpinner.setEditable(true); // Erlaubt direkte Eingabe
         // Workaround, um leere Eingabe zu ermöglichen (repräsentiert 'null' Zeit)
         timeSpinner.getEditor().textProperty().addListener((obs, oldValue, newValue) -> {
@@ -263,15 +262,6 @@ public class RecipeEditDialog {
         Objects.requireNonNull(recipe, "Recipe cannot be null");
 
         titleField.setText(recipe.getTitle());
-        // Setze Spinner-Wert (prüfe auf null)
-        timeSpinner.getValueFactory()
-                .setValue(recipe.getPreparationTimeMinutes() != null ? recipe.getPreparationTimeMinutes() : 0);
-        if (recipe.getPreparationTimeMinutes() == null) {
-            timeSpinner.getEditor().setText(""); // Leere das Textfeld, wenn Zeit null ist
-        }
-        difficultyComboBox.setValue(recipe.getDifficulty()); // Setzt Auswahl oder null
-        instructionsArea.setText(recipe.getInstructions());
-        notesArea.setText(recipe.getNotes());
 
         // Zutatenliste füllen
         ingredientsContainer.getChildren().clear(); // Alte Zeilen entfernen
