@@ -4,6 +4,7 @@ import atlantafx.base.theme.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 
@@ -78,6 +79,11 @@ public class MainApp extends Application {
         Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
 
         // --- 5. Stage konfigurieren und anzeigen ---
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_16x16.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_32x32.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_64x64.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_128x128.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_256x256.png")));
         primaryStage.setTitle("Rezeptverwaltung");
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(700); // Minimale Fenstergröße

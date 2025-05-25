@@ -88,7 +88,6 @@ public class RecipeEditDialog {
         titleField = new TextField();
         titleField.setPromptText("Titel des Rezepts");
 
-        // TimeSpinner ist defekt, keine ahnung warum
         // Spinner für Zeit: erlaubt nur positive Ganzzahlen oder 0
         timeSpinner = new Spinner<>(1,Integer.MAX_VALUE,1);
 
@@ -262,6 +261,10 @@ public class RecipeEditDialog {
         Objects.requireNonNull(recipe, "Recipe cannot be null");
 
         titleField.setText(recipe.getTitle());
+        timeSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, recipe.getPreparationTimeMinutes()));
+        difficultyComboBox.setValue(recipe.getDifficulty());
+        instructionsArea.setText(recipe.getInstructions() != null ? recipe.getInstructions() : "");
+        notesArea.setText(recipe.getNotes());
 
         // Zutatenliste füllen
         ingredientsContainer.getChildren().clear(); // Alte Zeilen entfernen
