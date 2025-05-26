@@ -9,7 +9,7 @@ import java.util.Objects;
  * Details.
  *
  * @version 1.1
- * @author Mohammed
+ * @author Mohammed, Cheyenne
  */
 @SuppressWarnings("All")
 public class Recipe {
