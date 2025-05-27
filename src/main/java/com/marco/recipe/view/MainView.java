@@ -2,7 +2,9 @@ package com.marco.recipe.view;
 
 import atlantafx.base.controls.CustomTextField;
 import atlantafx.base.layout.InputGroup;
+import atlantafx.base.theme.*;
 import atlantafx.base.theme.Styles;
+import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -50,6 +52,10 @@ public class MainView {
     private VBox detailViewContainer; // Container für die Detailansicht im Zentrum
     private ScrollPane detailScrollPane; // ScrollPane für die Details, falls sie zu lang werden
     private Label detailPlaceholderLabel; // Label, das angezeigt wird, wenn kein Rezept ausgewählt ist
+
+    // Theme-Auswahl
+    private ComboBox<String> themeComboBox;
+    private final String[] themeNames = {"PrimerLight", "PrimerDark", "Dracula", "NordLight", "NordDark", "CupertinoLight", "CupertinoDark"};
 
     /**
      * Konstruktor für die MainView.
@@ -105,6 +111,42 @@ public class MainView {
         detailScrollPane.setFitToHeight(true); // Passt die Höhe an (optional)
         detailScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); // Horizontale Scrollbar nie anzeigen
         detailScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED); // Vertikale Scrollbar bei Bedarf
+
+        // Theme ComboBox initialisieren
+        themeComboBox = new ComboBox<>();
+        themeComboBox.getItems().addAll(themeNames);
+        themeComboBox.setValue("CupertinoLight");
+        themeComboBox.setMaxWidth(Double.MAX_VALUE);
+        Application.setUserAgentStylesheet(new CupertinoLight().getUserAgentStylesheet()); // Initiales Theme anwenden
+
+        themeComboBox.setOnAction(event -> {
+            String selectedTheme = themeComboBox.getValue();
+            if (selectedTheme != null) {
+                switch (selectedTheme) {
+                    case "PrimerLight":
+                        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
+                        break;
+                    case "PrimerDark":
+                        Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+                        break;
+                    case "Dracula":
+                        Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
+                        break;
+                    case "NordLight":
+                        Application.setUserAgentStylesheet(new NordLight().getUserAgentStylesheet());
+                        break;
+                    case "NordDark":
+                        Application.setUserAgentStylesheet(new NordDark().getUserAgentStylesheet());
+                        break;
+                    case "CupertinoLight":
+                        Application.setUserAgentStylesheet(new CupertinoLight().getUserAgentStylesheet());
+                        break;
+                    case "CupertinoDark":
+                        Application.setUserAgentStylesheet(new CupertinoDark().getUserAgentStylesheet());
+                        break;
+                }
+            }
+        });
     }
 
     /**
@@ -129,7 +171,7 @@ public class MainView {
         VBox rightPane = new VBox(10); // 10px Abstand
         rightPane.setPadding(new Insets(5));
         rightPane.setAlignment(Pos.TOP_CENTER); // Buttons oben zentriert
-        rightPane.getChildren().addAll(newButton, editButton, deleteButton);
+        rightPane.getChildren().addAll(newButton, editButton, deleteButton, new Separator(), themeComboBox);
         rootPane.setRight(rightPane);
         BorderPane.setMargin(rightPane, new Insets(0, 0, 0, 10)); // Abstand zum mittleren Bereich
 

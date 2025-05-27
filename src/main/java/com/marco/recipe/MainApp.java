@@ -1,6 +1,5 @@
 package com.marco.recipe;
 
-import atlantafx.base.theme.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -76,7 +75,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(mainView.getRootPane(), 900, 650); // Startgröße des Fensters
 
         // --- 4.  Theme anwenden ---
-        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
+        //Application.setUserAgentStylesheet(new Dracula().getUserAgentStylesheet());
 
         // --- 5. Stage konfigurieren und anzeigen ---
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/marco/recipe/icons/icon_16x16.png")));

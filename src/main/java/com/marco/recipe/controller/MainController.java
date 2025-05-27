@@ -285,7 +285,6 @@ public class MainController {
             notesText.getStyleClass().add(Styles.ACCENT);
             detailsPane.getChildren().add(notesText);
         }
-
         // Übergebe das erstellte VBox-Pane an die MainView zur Anzeige
         mainView.displayRecipeDetails(detailsPane);
     }
